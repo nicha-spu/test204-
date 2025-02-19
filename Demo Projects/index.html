@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>รวม Demo Projects</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Demo Projects</h1>
+
+    <!-- To-Do List Section -->
+    <section id="todo">
+        <h2>📌 To-Do List</h2>
+        <input type="text" id="taskInput" placeholder="เพิ่มงาน...">
+        <button onclick="addTask()">เพิ่ม</button>
+        <ul id="taskList"></ul>
+    </section>
+
+    <!-- GPA Calculator Section -->
+    <section id="grade">
+        <h2>🎓 คำนวณ GPA</h2>
+        <form id="gradeForm">
+            <table>
+                <tr>
+                    <th>รหัสวิชา</th>
+                    <th>คะแนนที่ได้ (0-100)</th>
+                    <th>จำนวนหน่วยกิต</th>
+                </tr>
+                <tr>
+                    <td>CSI101</td>
+                    <td><input type="number" id="score1" min="0" max="100"></td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>CSI102</td>
+                    <td><input type="number" id="score2" min="0" max="100"></td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>CSI203</td>
+                    <td><input type="number" id="score3" min="0" max="100"></td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>CSI204</td>
+                    <td><input type="number" id="score4" min="0" max="100"></td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>CSI305</td>
+                    <td><input type="number" id="score5" min="0" max="100"></td>
+                    <td>3</td>
+                </tr>
+            </table>
+            <button type="button" onclick="calculateGPA()" style="margin-top: 10px;">คำนวณ GPA</button>
+            <button type="button" onclick="clearForm()">ล้างข้อมูล</button>
+        </form>
+        <h3>ผลลัพธ์: <span id="gpaResult">-</span></h3>
+        <div id="errorMessage" style="color: red; display: none;"></div>
+    </section>
+
+     <!-- API Data Fetching Section -->
+     <section id="api">
+        <h2>🌐 API Data Fetching</h2>
+        <button onclick="fetchUsers()">โหลดข้อมูลผู้ใช้งาน</button>
+        <ul id="userList"></ul>
+    </section>
+
+    <!-- Lottery Section -->
+    <section id="lottery">
+        <h2>🎲 Lottery Generator</h2>
+        <button onclick="generateLottery()">สุ่มเลข</button>
+        <p id="lotteryNumber">-</p>
+        <input type="text" id="userGuess" maxlength="6">
+        <button onclick="checkLottery()">ตรวจสอบ</button>
+        <p id="result">-</p>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
